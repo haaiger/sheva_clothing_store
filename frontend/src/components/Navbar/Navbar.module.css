@@ -1,0 +1,26 @@
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+    padding: 16px 0px;
+    font-size: 18px;
+}
+
+.button {
+    cursor: pointer;
+}
+
+.left {
+    display: flex;
+    gap: 16px;
+}
+
+.center {
+
+}
+
+.right {
+    display: flex;
+    gap: 16px;
+}

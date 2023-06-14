@@ -1,0 +1,29 @@
+.header {
+    display: flex;
+    justify-content:space-between
+}
+
+.top {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.center {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.subtitle {
+    font-size: 1.125rem;
+    font-weight: 600;
+}
+
+.button {
+    cursor: pointer;
+}
+
+.bottom {
+    font-size: 32px;
+}

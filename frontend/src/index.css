@@ -1,6 +1,7 @@
 @import url('./assets/reset.css');
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@600&family=Montserrat:wght@600&display=swap');
 
-:root {
+/* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -14,4 +15,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+} */
+
+body {
+  padding: 10px 40px;
+  font-family: 'Montserrat', sans-serif;
 }
