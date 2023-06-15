@@ -1,9 +1,15 @@
-import styles from './Home.module.css';
+import styles from "./Home.module.css";
+import Carousel from "./Carousel/Carousel";
+import RandomClothes from "./RandomClothes/RandomClothes";
 
 const Home = () => {
   return (
-    <div>Home</div>
-  )
-}
+    <div className={styles.wrapper}>
+      <Carousel />
 
-export default Home
+      <RandomClothes />
+    </div>
+  );
+};
+
+export default Home;

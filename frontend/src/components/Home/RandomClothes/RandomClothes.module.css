@@ -1,0 +1,47 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.wrapperButtons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin: 48px;
+}
+
+.button {
+    cursor: pointer;
+}
+
+.size {
+    font-size: 24px;
+}
+
+.button:hover {
+    color: black;
+}
+
+.activeButton {
+    text-decoration: underline;
+}
+
+.deactiveButton {
+    color: gray;
+    text-decoration: unset;
+}
+
+.wrapperCards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.wrapperSmallCards {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 24px;
+}

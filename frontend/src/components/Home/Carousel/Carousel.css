@@ -1,0 +1,7 @@
+.slick-track .slick-track {
+    overflow: hidden;
+}
+
+.slick-slider .slick-slide {
+    padding: 0 15px;
+}
