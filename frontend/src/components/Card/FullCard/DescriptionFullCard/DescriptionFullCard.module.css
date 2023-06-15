@@ -1,0 +1,50 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.wrapperStars {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 24px;
+}
+
+.wrapperSizes {
+    display: flex;
+    gap: 16px;
+    margin: 16px 0;
+}
+
+.wrapperButtons {
+    display: flex;
+    width: 100%;
+    gap: 16px;
+    padding-bottom: 32px;
+    margin-bottom: 24px;
+    border-bottom: 2px solid #f7f7f7;
+}
+
+.cart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    background-color: #ff6163;
+}
+
+.favorite {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header {
+    font-size: 24px;
+    line-height: 1.2;
+}
+
+.price {
+    margin: 16px 0;
+}

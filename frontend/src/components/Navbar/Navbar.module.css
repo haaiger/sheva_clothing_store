@@ -26,6 +26,11 @@
     flex-shrink: 0;
 }
 
+.title {
+    text-decoration: unset;
+    color: black
+}
+
 .right {
     display: flex;
     gap: 24px;

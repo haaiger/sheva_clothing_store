@@ -25,8 +25,9 @@ const Navbar = () => {
             <UnorderedListOutlined />
             <span>Меню</span>
           </div>
+
           <div className={styles.center}>
-            <span>SHEVA</span>
+            <a href="/" className={styles.title}>SHEVA</a>
           </div>
         </div>
 

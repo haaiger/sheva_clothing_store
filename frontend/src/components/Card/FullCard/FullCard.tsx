@@ -2,8 +2,17 @@ import { Card } from "antd";
 import styles from "./FullCard.module.css";
 import { Button } from "antd";
 import LineChartOutlined from "@ant-design/icons/lib/icons/LineChartOutlined";
+import { useState } from "react";
+import DescriptionFullCard from "./DescriptionFullCard/DescriptionFullCard";
 
 const FullCard = () => {
+  const [rating, setRating] = useState<number>(0);
+  const [activeSize, setActiveSize] = useState<string | null>(null);
+
+  const handleSizeClick = (size: string) => {
+    setActiveSize(size);
+  };
+
   return (
     <div className={styles.wrapper}>
       <div className={styles.wrapperList}>
@@ -18,7 +27,7 @@ const FullCard = () => {
         <Card
           bodyStyle={{ padding: "0" }}
           hoverable
-          style={{ width: 700 }}
+          style={{ width: '50%' }}
           cover={
             <img
               alt="example"
@@ -39,6 +48,13 @@ const FullCard = () => {
             }}
           />
         </Card>
+
+        <DescriptionFullCard
+          rating={rating}
+          setRating={setRating}
+          activeSize={activeSize}
+          handleSizeClick={handleSizeClick}
+        />
       </div>
     </div>
   );

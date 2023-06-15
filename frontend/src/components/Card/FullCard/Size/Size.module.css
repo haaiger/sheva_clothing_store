@@ -1,0 +1,30 @@
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px;
+    border-radius: 8px;
+    min-width: 30px;
+}
+
+.active {
+    border: 2px solid #ff6163;
+    background-color: white;
+}
+
+.deactive {
+    background-color: #f7f7f7;
+}
+
+.deactive:hover {
+    background-color: #d0d0d0;
+    transition: background-color 0.3s ease
+}
+
+.button {
+    cursor: pointer;
+}
+
+.text {
+    font-size: 20px;
+}
