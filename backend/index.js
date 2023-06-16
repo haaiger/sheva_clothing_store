@@ -1,9 +1,10 @@
 require('dotenv').config();
 const express = require('express');
 const morgan = require('morgan');
+const path = require('path');
 
 // const sessions = require('./src/middlewares/sessions');
-// const cors = require('./src/middlewares/cors');
+const cors = require('./src/middlewares/cors');
 
 const authRouter = require('./src/routers/authRouter');
 const fetchRouter = require('./src/routers/fetchRouter');
@@ -12,14 +13,15 @@ const app = express();
 
 const PORT = process.env.PORT ?? 6622;
 
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-// app.use(cors);
+app.use(cors);
 // app.use(sessions);
 
 app.use('/', authRouter);
-app.use('/fetchData', fetchRouter);
+app.use('/products', fetchRouter);
 app.use('*', (request, response) => {
   response.sendStatus(404);
 });
