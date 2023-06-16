@@ -1,5 +1,12 @@
 import { Dispatch, SetStateAction } from "react";
 
+export interface ISmallCardProps {
+    id: number,
+    productName: string,
+    price: string,
+    photos: string[],
+}
+
 export interface ISizeCard {
     size: string;
     active?: boolean;

@@ -2,8 +2,9 @@ import { useState } from "react";
 import styles from "./RandomClothes.module.css";
 import SmallCard from "../../Card/SmallCard/SmallCard";
 import RightOutlined from "@ant-design/icons/lib/icons/RightOutlined";
+import { IProduct } from "../../../types/common";
 
-const RandomClothes = () => {
+const RandomClothes = ({ products }: { products: IProduct[] | null }) => {
   const [isActiveMan, setIsActiveMan] = useState<boolean>(true);
 
   return (
@@ -29,14 +30,11 @@ const RandomClothes = () => {
 
       <div className={styles.wrapperCards}>
         <div className={styles.wrapperSmallCards}>
-          <SmallCard />
-          <SmallCard />
-          <SmallCard />
-          <SmallCard />
-          <SmallCard />
-          <SmallCard />
-          <SmallCard />
-          <SmallCard />
+          {products &&
+            products.length > 0 &&
+            products.map((card: IProduct) => (
+              <SmallCard key={card.id} {...card} />
+            ))}
         </div>
 
         <div className={styles.button}>
