@@ -17,7 +17,7 @@ const Home = () => {
         const data = await response.json();
         setProducts(data);
       } catch (error) {
-        console.error("Ошибка получения продукта: ", error);
+        console.error("Ошибка получения продуктов: ", error);
       }
     };
 

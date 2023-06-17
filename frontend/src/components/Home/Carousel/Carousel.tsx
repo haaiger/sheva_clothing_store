@@ -1,5 +1,6 @@
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { Link } from "react-router-dom";
 import Slider from "react-slick";
 import "./Carousel.css";
 import styles from "./Carousel.module.css";
@@ -22,12 +23,14 @@ const Carousel = ({ products }: { products: IProduct[] | null }) => {
         {products &&
           products.map((product: IProduct, index: number) => (
             <div key={index} className={styles.wrapperImage}>
-              <img
-                key={product.id}
-                src={product.photos[3]}
-                alt={`Image ${product.id}`}
-                className={styles.image}
-              />
+              <Link to={`/full/${product.id}`}>
+                <img
+                  key={product.id}
+                  src={product.photos[3]}
+                  alt={`Image ${product.id}`}
+                  className={styles.image}
+                />
+              </Link>
             </div>
           ))}
       </Slider>

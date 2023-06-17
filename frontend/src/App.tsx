@@ -10,7 +10,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Navbar />}>
           <Route index element={<Home />} />
-          <Route path="/full" element={<FullCard />} />
+          <Route path="/full/:id" element={<FullCard />} />
         </Route>
       </Routes>
 

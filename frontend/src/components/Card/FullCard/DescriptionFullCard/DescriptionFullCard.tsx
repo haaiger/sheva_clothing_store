@@ -11,14 +11,26 @@ const features = [
   { id: 2, name: "Состав", composition: "Кашемир" },
 ];
 
-const size: string[] = ["S", "M", "L", "XL"];
-
 const DescriptionFullCard = ({
   rating,
   setRating,
   activeSize,
   handleSizeClick,
+  product,
 }: IDescriptionFullCardProps): JSX.Element => {
+  const {
+    productName,
+    description,
+    price,
+    size,
+    color,
+    category,
+    brand,
+    count,
+  } = product || {};
+
+  const sizeArray = size ? size.split(",") : [];
+
   return (
     <div className={styles.wrapper}>
       <div className={styles.wrapperStars}>
@@ -26,18 +38,20 @@ const DescriptionFullCard = ({
         <div>(0)</div>
       </div>
 
-      <h1 className={styles.header}>Пальто кашемировое</h1>
+      <h1 className={styles.header}>{productName}</h1>
 
       <div className={styles.price}>
-        <span>15 490 ₽</span>
+        <span>{price} ₽</span>
       </div>
+
+      <span>{description}</span>
 
       <div>
         <span>Размер</span>
       </div>
 
       <div className={styles.wrapperSizes}>
-        {size.map((item: string) => (
+        {sizeArray.map((item: string) => (
           <SizeCard
             key={item}
             size={item}
@@ -51,7 +65,11 @@ const DescriptionFullCard = ({
         <Button className={styles.cart} style={{ padding: 28 }}>
           В корзину
         </Button>
-        <Button className={styles.favorite} icon={<HeartOutlined />} style={{ padding: 28 }}></Button>
+        <Button
+          className={styles.favorite}
+          icon={<HeartOutlined />}
+          style={{ padding: 28 }}
+        ></Button>
       </div>
 
       <InfoDropdown title="Характеристики" info={features} />

@@ -1,4 +1,5 @@
-import { useState } from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import styles from "./RandomClothes.module.css";
 import SmallCard from "../../Card/SmallCard/SmallCard";
 import RightOutlined from "@ant-design/icons/lib/icons/RightOutlined";
@@ -18,6 +19,7 @@ const RandomClothes = ({ products }: { products: IProduct[] | null }) => {
         >
           Мужчинам
         </span>
+
         <span
           className={`${styles.button} ${
             isActiveMan ? styles.deactiveButton : styles.activeButton
@@ -33,7 +35,7 @@ const RandomClothes = ({ products }: { products: IProduct[] | null }) => {
           {products &&
             products.length > 0 &&
             products.map((card: IProduct) => (
-              <SmallCard key={card.id} {...card} />
+              <SmallCard {...card} key={card.id} />
             ))}
         </div>
 

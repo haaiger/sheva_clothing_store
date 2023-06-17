@@ -1,4 +1,5 @@
 import { Dispatch, SetStateAction } from "react";
+import { IProduct } from "../../../types/common";
 
 export interface ISmallCardProps {
     id: number,
@@ -25,6 +26,7 @@ export interface IDescriptionFullCardProps {
     setRating: Dispatch<SetStateAction<number>>;
     activeSize: string | null;
     handleSizeClick: (size: string) => void;
+    product: IProduct;
 }
 
 export interface IInfo {

@@ -38,6 +38,9 @@ router.get('/:id', async (request, response) => {
     photos: photos.map((photo) => photo.path),
   };
 
+  delete mergedProducts.createdAt;
+  delete mergedProducts.updatedAt;
+
   console.log(mergedProducts);
   response.json(mergedProducts);
 });
