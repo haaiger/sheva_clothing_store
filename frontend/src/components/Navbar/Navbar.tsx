@@ -1,14 +1,14 @@
 import { useState } from "react";
+import { CloseCircleOutlined } from "@ant-design/icons";
+import { Outlet } from "react-router-dom";
 import UnorderedListOutlined from "@ant-design/icons/lib/icons/UnorderedListOutlined";
 import SearchOutlined from "@ant-design/icons/lib/icons/SearchOutlined";
 import LineChartOutlined from "@ant-design/icons/lib/icons/LineChartOutlined";
-import HeartOutlined from "@ant-design/icons/lib/icons/HeartOutlined";
-import ShoppingCartOutlined from "@ant-design/icons/lib/icons/ShoppingCartOutlined";
 import { Input } from "antd";
 import styles from "./Navbar.module.css";
 import LeftPanel from "../ LeftPanel/LeftPanel";
-import { CloseCircleOutlined } from "@ant-design/icons";
-import { Outlet } from "react-router-dom";
+import FavoriteIcon from "./FavoriteIcon/FavoriteIcon";
+import ShoppingCartIcon from "./ShoppingCartIcon/ShoppingCartIcon";
 
 /**
  * Компонент Navbar представляет навигационную панель.
@@ -67,11 +67,8 @@ const Navbar = (): JSX.Element => {
           </div>
 
           <LineChartOutlined className={styles.button} />
-          <HeartOutlined
-            className={styles.button}
-            onClick={() => (window.location.href = "/favorites")}
-          />
-          <ShoppingCartOutlined className={styles.button} />
+          <FavoriteIcon />
+          <ShoppingCartIcon />
         </div>
 
         {isShowLeftPanel && <LeftPanel handlePanel={setIsShowLeftPanel} />}

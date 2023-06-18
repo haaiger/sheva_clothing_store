@@ -17,6 +17,11 @@
     color: gray
 }
 
+.link {
+    color: gray;
+    text-decoration: unset;
+}
+
 .button {
     cursor: pointer;
 }
@@ -30,6 +35,6 @@
     margin-bottom: 32px;
 }
 
-.wrapperAnalogProduct{
+.wrapperAnalogProduct {
     display: flex;
 }

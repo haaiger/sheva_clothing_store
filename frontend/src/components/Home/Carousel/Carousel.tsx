@@ -7,7 +7,9 @@ import styles from "./Carousel.module.css";
 import { ICarouselProps, IProduct } from "../../../types/common";
 
 /**
- * Карусель товаров на главной странице (Home). Не реализован функционал рандома.
+ * Карусель товаров на главной странице (Home).
+ * 
+ * ! TODO: Реализовать функционал рандома.
  * 
  * @param {IProduct[]} products - Список всех товаров.
  */
