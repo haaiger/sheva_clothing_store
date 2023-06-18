@@ -9,12 +9,13 @@ import { IProduct } from "../../../types/common";
 const Carousel = ({ products }: { products: IProduct[] | null }) => {
   const settings = {
     dots: true,
-    infinite: false,
+    infinite: true,
     speed: 500,
     slidesToShow: 6,
     slidesToScroll: 1,
     adaptiveHeight: true,
     initialSlide: 1,
+    autoplay: true,
   };
 
   return (

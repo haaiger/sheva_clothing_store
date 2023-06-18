@@ -27,7 +27,9 @@ const Navbar = () => {
           </div>
 
           <div className={styles.center}>
-            <a href="/" className={styles.title}>SHEVA</a>
+            <a href="/" className={styles.title}>
+              SHEVA
+            </a>
           </div>
         </div>
 
@@ -62,7 +64,10 @@ const Navbar = () => {
           </div>
 
           <LineChartOutlined className={styles.button} />
-          <HeartOutlined className={styles.button} />
+          <HeartOutlined
+            className={styles.button}
+            onClick={() => (window.location.href = "/favorites")}
+          />
           <ShoppingCartOutlined className={styles.button} />
         </div>
 
