@@ -33,12 +33,20 @@ const LeftPanel: React.FC<ILeftPanel> = ({ handlePanel }: ILeftPanel) => {
       <div className={styles.top}>
         <span className={styles.subtitle}>Навигация</span>
 
-        <p className={styles.button}>Каталог</p>
-        <p className={styles.button}>О компании</p>
-        <p className={styles.button}>Контакты</p>
-        <p className={styles.button}>Доставка</p>
-        <p className={styles.button}>Оплата</p>
-        <p className={styles.button}>Личный кабинет</p>
+        <p className={styles.button}></p>
+        <p className={styles.button}>
+          <a href="/about-us" className={styles.link}>
+            О компании
+          </a>
+        </p>
+        <p className={styles.button}>
+          <a href="/contacts" className={styles.link}>
+            Контакты
+          </a>
+        </p>
+        <p className={styles.button}>Доставка [не активна]</p>
+        <p className={styles.button}>Оплата [не активна]</p>
+        <p className={styles.button}>Личный кабинет [не активна]</p>
       </div>
 
       <Divider />

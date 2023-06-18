@@ -1,6 +1,6 @@
 .header {
     display: flex;
-    justify-content:space-between
+    justify-content: space-between
 }
 
 .top {
@@ -22,6 +22,14 @@
 
 .button {
     cursor: pointer;
+}
+
+.link {
+    color: unset;
+}
+
+.link:hover {
+    color: unset;
 }
 
 .bottom {

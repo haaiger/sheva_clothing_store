@@ -1,0 +1,23 @@
+.wrapper {
+    flex: 1;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.head {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+
+.wrapperText {}
+
+.paragraph {
+    margin-bottom: 16px;
+    font-weight: unset;
+}
+
+.strong {
+    font-weight: 500;
+}
