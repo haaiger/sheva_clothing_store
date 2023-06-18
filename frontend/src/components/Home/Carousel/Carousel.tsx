@@ -11,7 +11,7 @@ const Carousel = ({ products }: { products: IProduct[] | null }) => {
     dots: true,
     infinite: false,
     speed: 500,
-    slidesToShow: 4,
+    slidesToShow: 6,
     slidesToScroll: 1,
     adaptiveHeight: true,
     initialSlide: 1,

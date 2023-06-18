@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { useState } from "react";
 import styles from "./RandomClothes.module.css";
 import SmallCard from "../../Card/SmallCard/SmallCard";
 import RightOutlined from "@ant-design/icons/lib/icons/RightOutlined";
@@ -7,6 +6,13 @@ import { IProduct } from "../../../types/common";
 
 const RandomClothes = ({ products }: { products: IProduct[] | null }) => {
   const [isActiveMan, setIsActiveMan] = useState<boolean>(true);
+
+  const filteredProducts = products
+    ? products.filter(
+        (product: IProduct) =>
+          product.gender === (isActiveMan ? "Male" : "Female")
+      )
+    : [];
 
   return (
     <div className={styles.wrapper}>
@@ -32,11 +38,9 @@ const RandomClothes = ({ products }: { products: IProduct[] | null }) => {
 
       <div className={styles.wrapperCards}>
         <div className={styles.wrapperSmallCards}>
-          {products &&
-            products.length > 0 &&
-            products.map((card: IProduct) => (
-              <SmallCard {...card} key={card.id} />
-            ))}
+          {filteredProducts.map((card: IProduct) => (
+            <SmallCard {...card} key={card.id} />
+          ))}
         </div>
 
         <div className={styles.button}>
