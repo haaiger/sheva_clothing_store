@@ -1,6 +1,5 @@
 const router = require('express').Router();
 const bcrypt = require('bcrypt');
-
 const { User } = require('../../db/models');
 
 router.get('/', async (request, response) => {

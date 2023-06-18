@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { Product, Photo } = require('../../db/models');
 
+// Ручка для получения всех товаров.
 router.get('/', async (request, response) => {
   try {
     const products = await Product.findAll({
@@ -22,10 +23,11 @@ router.get('/', async (request, response) => {
     response.json(mergedProducts);
   } catch (error) {
     console.error('Ошибка при получении продуктов: ', error);
-    response.status(500).json({ error: 'Внутренняя ошибка сервера' });
+    response.status(500).json({ message: 'Ошибка при получении продуктов', error });
   }
 });
 
+// Ручка для получения аналогичных товаров.
 router.get('/:gender/:category/:productId', async (request, response) => {
   const { gender, category, productId } = request.params;
 
@@ -69,6 +71,7 @@ router.get('/:gender/:category/:productId', async (request, response) => {
   }
 });
 
+// Ручка для получения конкретного товара.
 router.get('/:id', async (request, response) => {
   const productId = request.params.id || 1;
 

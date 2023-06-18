@@ -7,7 +7,8 @@ const path = require('path');
 const cors = require('./src/middlewares/cors');
 
 const authRouter = require('./src/routers/authRouter');
-const fetchRouter = require('./src/routers/fetchRouter');
+const fetcProductsRouter = require('./src/routers/fetcProductsRouter');
+const fetchFavoritesRouter = require('./src/routers/fetchFavoritesRouter');
 
 const app = express();
 
@@ -21,7 +22,8 @@ app.use(cors);
 // app.use(sessions);
 
 app.use('/', authRouter);
-app.use('/products', fetchRouter);
+app.use('/products', fetcProductsRouter);
+app.use('/favorites', fetchFavoritesRouter);
 app.use('*', (request, response) => {
   response.sendStatus(404);
 });
