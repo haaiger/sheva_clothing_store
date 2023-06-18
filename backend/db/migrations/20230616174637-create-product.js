@@ -20,6 +20,9 @@ module.exports = {
       size: {
         type: Sequelize.STRING,
       },
+      gender: {
+        type: Sequelize.STRING,
+      },
       color: {
         type: Sequelize.STRING,
       },
