@@ -31,9 +31,7 @@ const Favorites = () => {
     };
 
     fetchFavorites();
-  }, [products]);
-
-  useEffect(() => console.log(products), [products]);
+  }, []);
 
   return (
     <div className={styles.wrapper}>
