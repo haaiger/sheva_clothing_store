@@ -8,41 +8,45 @@ import { IProduct } from "../../../types/common";
 import { useParams } from "react-router-dom";
 import SmallCard from "../SmallCard/SmallCard";
 
-const FullCard = () => {
-  // Состояния компонента
-  const [product, setProduct] = useState<IProduct | null>(null); // Текущий продукт
-  const [analogProduct, setAnalogProduct] = useState<IProduct[] | null>(null); // Аналогичные продукты
-  const [rating, setRating] = useState<number>(0); // Рейтинг продукта
+/**
+ * Компонент FullCard отображает полную информацию о товаре, включая описание,
+ * рейтинг, размеры и аналогичные товары.
+ */
+const FullCard = (): JSX.Element => {
+  const [product, setProduct] = useState<IProduct | null>(null); // Текущий товар
+  const [analogProduct, setAnalogProduct] = useState<IProduct[] | null>(null); // Аналогичные товары
+  const [rating, setRating] = useState<number>(0); // Рейтинг товара
   const [activeSize, setActiveSize] = useState<string | null>(null); // Активный размер
 
   const { id } = useParams(); // Получение параметра id из URL
 
   useEffect(() => {
-    // Функция для получения данных о продукте и аналогичных продуктах
+    // Функция для получения данных о товаре и аналогичных товарах
     const fetchData = async () => {
       try {
-        // Получение данных о продукте
+        // Получение данных о товаре
         const productResponse = await fetch(
           `http://localhost:4000/products/${id}`
         );
         if (!productResponse.ok) {
-          throw new Error("Не удалось получить продукт");
+          throw new Error("Не удалось получить товар");
         }
-        const productData = await productResponse.json();
+        const productData: IProduct = await productResponse.json();
         setProduct(productData);
 
-        // Получение данных об аналогичных продуктах
+        // Получение данных об аналогичных товарах
         const analogProductsResponse = await fetch(
           `http://localhost:4000/products/${productData.gender}/${productData.category}/${productData.id}`
         );
         if (!analogProductsResponse.ok) {
-          throw new Error("Не удалось получить аналогичные продукты");
+          throw new Error("Не удалось получить аналогичные товары");
         }
-        const analogProductsData = await analogProductsResponse.json();
+        const analogProductsData: IProduct[] =
+          await analogProductsResponse.json();
         setAnalogProduct(analogProductsData);
       } catch (error) {
         console.error(
-          "Ошибка получения продукта или аналогичных продуктов: ",
+          "Ошибка получения товара или аналогичных товаров: ",
           error
         );
       }
@@ -51,19 +55,17 @@ const FullCard = () => {
     fetchData(); // Вызов функции получения данных.
   }, [id]);
 
-  useEffect(() => console.log("product:", product), [product]);
-  useEffect(
-    () => console.log("analogProduct:", analogProduct),
-    [analogProduct]
-  );
-
   if (!product) {
-    return <div>Loading...</div>; // Вывод сообщения о загрузке, если продукт еще не получен
+    return <div>Loading...</div>; // Вывод сообщения о загрузке, если товар еще не получен
   }
 
-  const handleSizeClick = (size: string) => {
+  const handleSizeClick = (size: string): void => {
     setActiveSize(size); // Обработчик клика по размеру
   };
+
+  // Определение пола у товара (Женский/Мужской)
+  const determinationGender: "Мужчинами" | "Женщинам" =
+    product.gender === "Male" ? "Мужчинами" : "Женщинам";
 
   return (
     <div className={styles.wrapper}>
@@ -71,7 +73,9 @@ const FullCard = () => {
         <ul className={styles.list}>
           <li className={`${styles.listElement} ${styles.button}`}>Главная</li>
           <li className={styles.listElement}>/</li>
-          <li className={`${styles.listElement} ${styles.button}`}>Женщинам</li>
+          <li className={`${styles.listElement} ${styles.button}`}>
+            {determinationGender}
+          </li>
         </ul>
       </div>
 

@@ -10,9 +10,12 @@ import LeftPanel from "../ LeftPanel/LeftPanel";
 import { CloseCircleOutlined } from "@ant-design/icons";
 import { Outlet } from "react-router-dom";
 
-const Navbar = () => {
-  const [isShowLeftPanel, setIsShowLeftPanel] = useState<boolean>(false);
-  const [isShowSearchInput, setIsShowSearchIn] = useState<boolean>(false);
+/**
+ * Компонент Navbar представляет навигационную панель.
+ */
+const Navbar = (): JSX.Element => {
+  const [isShowLeftPanel, setIsShowLeftPanel] = useState<boolean>(false); // Отображение меню (навигация) слева
+  const [isShowSearchInput, setIsShowSearchIn] = useState<boolean>(false); // Отображение инпута
 
   return (
     <>

@@ -3,6 +3,12 @@ import styles from "./InfoDropdown.module.css";
 import { useState } from "react";
 import { IInfo, IInfoDropdownProps } from "../../../types/types";
 
+/**
+ * Компонент InfoDropdown представляет собой выпадающий блок с информацией.
+ * Он принимает следующие свойства:
+ * @param {string} title - Заголовок блока.
+ * @param {IInfo[]} info - Массив с информацией для отображения.
+ */
 const InfoDropdown = ({ title, info }: IInfoDropdownProps): JSX.Element => {
   const [isActive, setIsActive] = useState<boolean>(false);
 

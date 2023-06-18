@@ -8,8 +8,15 @@ interface ILeftPanel {
   handlePanel: Dispatch<SetStateAction<boolean>>;
 }
 
-const LeftPanel: React.FC<ILeftPanel> = ({ handlePanel }: ILeftPanel) => {
-  const handleClose = () => {
+/**
+ * Компонент LeftPanel представляет боковую панель меню слева.
+ *
+ * @param {function} handlePanel - Функция обработчик для закрытия панели.
+ */
+const LeftPanel: React.FC<ILeftPanel> = ({
+  handlePanel,
+}: ILeftPanel): JSX.Element => {
+  const handleClose = (): void => {
     handlePanel(false);
   };
 

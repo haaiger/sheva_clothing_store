@@ -35,10 +35,10 @@ router.get('/:ids', async (request, response) => {
 
     response.json(mergedProducts);
   } catch (error) {
-    console.error('Ошибка при получении избранных продуктов: ', error);
+    console.error('Ошибка при получении избранных товаров: ', error);
     response
       .status(500)
-      .json({ message: 'Ошибка при получении избранных продуктов:', error });
+      .json({ message: 'Ошибка при получении избранных товаров:', error });
   }
 });
 

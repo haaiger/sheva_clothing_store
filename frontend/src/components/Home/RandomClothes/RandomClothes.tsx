@@ -2,12 +2,18 @@ import { useState } from "react";
 import styles from "./RandomClothes.module.css";
 import SmallCard from "../../Card/SmallCard/SmallCard";
 import RightOutlined from "@ant-design/icons/lib/icons/RightOutlined";
-import { IProduct } from "../../../types/common";
+import { IProduct, IRandomClothesProps } from "../../../types/common";
 
-const RandomClothes = ({ products }: { products: IProduct[] | null }) => {
-  const [isActiveMan, setIsActiveMan] = useState<boolean>(true);
+/**
+ * Отображение списка случайных товаров на странице Home.
+ *
+ * @param {IProduct[]} products - Список всех товаров.
+ */
+const RandomClothes = ({ products }: IRandomClothesProps): JSX.Element => {
+  const [isActiveMan, setIsActiveMan] = useState<boolean>(true); // Состояния, для отображения товаров (мужские или женские)
 
-  const filteredProducts = products
+  // Фильтрация продуктов в зависимости от выбранного пола (мужчины или женщины)
+  const filteredProducts: IProduct[] = products
     ? products.filter(
         (product: IProduct) =>
           product.gender === (isActiveMan ? "Male" : "Female")

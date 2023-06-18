@@ -22,8 +22,8 @@ router.get('/', async (request, response) => {
 
     response.json(mergedProducts);
   } catch (error) {
-    console.error('Ошибка при получении продуктов: ', error);
-    response.status(500).json({ message: 'Ошибка при получении продуктов', error });
+    console.error('Ошибка при получении товаров: ', error);
+    response.status(500).json({ message: 'Ошибка при получении товаров', error });
   }
 });
 
@@ -64,10 +64,10 @@ router.get('/:gender/:category/:productId', async (request, response) => {
 
     response.json(mergedProducts);
   } catch (error) {
-    console.error('Ошибка при получении аналогичных продуктов: ', error);
+    console.error('Ошибка при получении аналогичных товаров: ', error);
     response
       .status(500)
-      .json({ message: 'Ошибка при получении аналогичных продуктов:', error });
+      .json({ message: 'Ошибка при получении аналогичных товаров:', error });
   }
 });
 
@@ -95,10 +95,10 @@ router.get('/:id', async (request, response) => {
 
     response.json(mergedProduct);
   } catch (error) {
-    console.error('Ошибка при получении продукта: ', error);
+    console.error('Ошибка при получении товара: ', error);
     response
       .status(500)
-      .json({ message: 'Ошибка при получении продукта:', error });
+      .json({ message: 'Ошибка при получении товара:', error });
   }
 });
 

@@ -6,11 +6,24 @@ import { IDescriptionFullCardProps } from "../../types/types";
 import HeartOutlined from "@ant-design/icons/lib/icons/HeartOutlined";
 import InfoDropdown from "./InfoDropdown/InfoDropdown";
 
+// Примеры характеристик
 const features = [
   { id: 1, name: "Страна", composition: "Россия" },
   { id: 2, name: "Состав", composition: "Кашемир" },
 ];
 
+/**
+ * Компонент DescriptionFullCard представляет собой полное описание товара.
+ * Он принимает следующие свойства:
+ * @param {number} rating - Рейтинг товара.
+ * @param {function} setRating - Функция для установки рейтинга товара.
+ * @param {string} activeSize - Активный размер товара.
+ * @param {function} handleSizeClick - Обработчик клика по размеру товара.
+ * @param {object} product - Объект с информацией о товаре.
+ *
+ * Компонент отображает полное описание товара, включая название, цену, описание,
+ * размеры, кнопки действий, характеристики и отзывы.
+ */
 const DescriptionFullCard = ({
   rating,
   setRating,
@@ -29,7 +42,9 @@ const DescriptionFullCard = ({
     count,
   } = product || {};
 
-  const sizeArray = size ? size.split(",") : [];
+  // size приходит строкой, чтобы правильно выводить превращаем в массив строк.
+  // Преобразование строки размеров в массив строк
+  const sizeArray: string[] = size ? size.split(",") : [];
 
   return (
     <div className={styles.wrapper}>

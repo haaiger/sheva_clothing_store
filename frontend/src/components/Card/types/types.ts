@@ -14,7 +14,7 @@ export interface ISizeCard {
     onClick?: (size: string) => void;
 }
 
-export interface IRatingProps {
+export interface IStarProps {
     value: number;
     onChange: (value: number) => void;
     disabled?: boolean;

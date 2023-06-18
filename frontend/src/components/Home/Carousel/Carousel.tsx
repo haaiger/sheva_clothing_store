@@ -4,9 +4,14 @@ import { Link } from "react-router-dom";
 import Slider from "react-slick";
 import "./Carousel.css";
 import styles from "./Carousel.module.css";
-import { IProduct } from "../../../types/common";
+import { ICarouselProps, IProduct } from "../../../types/common";
 
-const Carousel = ({ products }: { products: IProduct[] | null }) => {
+/**
+ * Карусель товаров на главной странице (Home). Не реализован функционал рандома.
+ * 
+ * @param {IProduct[]} products - Список всех товаров.
+ */
+const Carousel = ({ products }: ICarouselProps): JSX.Element => {
   const settings = {
     dots: true,
     infinite: true,

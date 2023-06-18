@@ -1,28 +1,40 @@
 import React, { useState } from "react";
-import { IRatingProps } from "../../types/types";
+import { IStarProps } from "../../types/types";
 
-const Stars: React.FC<IRatingProps> = ({
+/**
+ * Компонент Stars представляет собой оценку в виде звезд.
+ * Он принимает следующие свойства:
+ * @param {number} id - Идентификатор карточки товара.
+ * @param {string} productName - Название товара.
+ * @param {number} price - Цена товара.
+ * @param {string[]} photos - Массив фотографий товара.
+ * Он позволяет пользователю выбрать оценку, а также отображает текущую оценку.
+ */
+const Stars: React.FC<IStarProps> = ({
   value,
   onChange,
   disabled,
   size,
-}: IRatingProps) => {
-  const [hoverValue, setHoverValue] = useState<number | null>(null);
-  const stars = [1, 2, 3, 4, 5];
+}: IStarProps): JSX.Element => {
+  const [hoverValue, setHoverValue] = useState<number | null>(null); // Состояние для хранения значения оценки при наведении на звезды
+  const stars: number[] = [1, 2, 3, 4, 5];
 
-  const handleMouseEnter = (star: number) => {
+  // Обработчик события при наведении указателя мыши на звезду
+  const handleMouseEnter = (star: number): void => {
     if (!disabled) {
       setHoverValue(star);
     }
   };
 
-  const handleMouseLeave = () => {
+  // Обработчик события при выходе указателя мыши из области звезд
+  const handleMouseLeave = (): void => {
     if (!disabled) {
       setHoverValue(null);
     }
   };
 
-  const handleClick = (star: number) => {
+  // Обработчик события при клике на звезду
+  const handleClick = (star: number): void => {
     if (!disabled) {
       onChange(star);
     }

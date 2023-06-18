@@ -3,8 +3,11 @@ import SmallCard from "../Card/SmallCard/SmallCard";
 import styles from "./Favorites.module.css";
 import { IProduct } from "../../types/common";
 
-const Favorites = () => {
-  const [products, setProducts] = useState<IProduct[] | null>(null);
+/**
+ * Компонент Favorites отображает список избранных товаров.
+ */
+const Favorites = (): JSX.Element => {
+  const [products, setProducts] = useState<IProduct[] | null>(null); // Избранные товары
 
   useEffect(() => {
     const fetchFavorites = async () => {
@@ -23,10 +26,10 @@ const Favorites = () => {
         const response = await fetch(
           `http://localhost:4000/favorites/${favoriteIds.join("-")}`
         );
-        const data = await response.json();
+        const data: IProduct[] = await response.json();
         setProducts(data);
       } catch (error) {
-        console.error("Ошибка при получении избранных продуктов: ", error);
+        console.error("Ошибка при получении избранных товаров: ", error);
       }
     };
 

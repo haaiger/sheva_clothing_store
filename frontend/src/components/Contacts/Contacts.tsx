@@ -1,6 +1,9 @@
 import styles from "./Contacts.module.css";
 
-const Contacts = () => {
+/**
+ * Страница контактов.
+ */
+const Contacts = (): JSX.Element => {
   return (
     <div className={styles.wrapper}>
       <h1>Мои контакты: (тык)</h1>

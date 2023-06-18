@@ -11,3 +11,11 @@ export interface IProduct {
     count: number;
     photos: string[];
 }
+
+export interface IRandomClothesProps {
+    products: IProduct[] | null;
+}
+
+export interface ICarouselProps {
+    products: IProduct[] | null;
+}

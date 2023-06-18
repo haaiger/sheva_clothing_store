@@ -3,7 +3,10 @@ import LinkedIn from "../../public/photo/social/LinkedIn.jpg";
 import Telegram from "../../public/photo/social/Telegram.jpg";
 import VK from "../../public/photo/social/VK.jpg";
 
-const Footer = () => {
+/**
+ * Компонент Footer представляет подвал страницы.
+ */
+const Footer = (): JSX.Element => {
   return (
     <footer className={styles.wrapper}>
       <div className={styles.wrapperSocials}>

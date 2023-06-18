@@ -1,6 +1,9 @@
 import styles from "./AboutUs.module.css";
 
-const AboutUs = () => {
+/**
+ * Компонент AboutUs представляет собой блок с информацией о компании.
+ */
+const AboutUs = (): JSX.Element => {
   return (
     <div className={styles.wrapper}>
       <h1 className={styles.head}>О компании</h1>

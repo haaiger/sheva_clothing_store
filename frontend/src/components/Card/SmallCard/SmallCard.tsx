@@ -9,13 +9,21 @@ import { ISmallCardProps } from "../types/types";
 
 const { Meta } = Card;
 
+/**
+ * Компонент SmallCard представляет карточку товара в уменьшенном формате.
+ *
+ * @param {number} id - Идентификатор карточки товара.
+ * @param {string} productName - Название товара.
+ * @param {number} price - Цена товара.
+ * @param {string[]} photos - Массив фотографий товара.
+ */
 const SmallCard: React.FC<ISmallCardProps> = ({
   id,
   productName,
   price,
   photos,
-}: ISmallCardProps) => {
-  const [isFavorite, setIsFavorite] = useState<boolean>(false);
+}: ISmallCardProps): JSX.Element => {
+  const [isFavorite, setIsFavorite] = useState<boolean>(false); // Состояние активности кнопки товара в избранном
 
   useEffect(() => {
     // Проверка наличия id карточки в localStorage при загрузке компонента
@@ -24,12 +32,14 @@ const SmallCard: React.FC<ISmallCardProps> = ({
     setIsFavorite(favorites.includes(id));
   }, [id]);
 
-  const truncatedProductName =
+  // Сокращение тайтла для карточки, если больше 18 символов
+  const truncatedProductName: string =
     productName.length > 18
       ? productName.slice(0, 18).trim() + "..."
       : productName;
 
-  const handleHeartButtonClick = (event: React.MouseEvent) => {
+  // Хэндлер на нажатие кнопки добавление/удаления избранного
+  const handleHeartButtonClick = (event: React.MouseEvent): void => {
     event.stopPropagation(); // Остановить всплытие события
 
     // Получение существующих избранных товаров из localStorage
@@ -56,7 +66,8 @@ const SmallCard: React.FC<ISmallCardProps> = ({
     }
   };
 
-  const handleShoppingButtonClick = (event: React.MouseEvent) => {
+  // Хэндлер на нажатие кнопки добавления в карзину
+  const handleShoppingButtonClick = (event: React.MouseEvent): void => {
     event.stopPropagation();
   };
 
