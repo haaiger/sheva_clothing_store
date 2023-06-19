@@ -8,6 +8,7 @@ import AboutUs from "./components/AboutUs/AboutUs";
 import Contacts from "./components/Contacts/Contacts";
 import Favorites from "./components/Favorites/Favorites";
 import Catalog from "./components/Catalog/Catalog";
+import Search from "./components/Search/Search";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/contacts" element={<Contacts />} />
           <Route path="/favorites" element={<Favorites />} />
           <Route path="/catalog" element={<Catalog />} />
+          <Route path="/search" element={<Search />} />
         </Route>
       </Routes>
 

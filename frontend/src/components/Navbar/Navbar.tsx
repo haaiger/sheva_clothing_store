@@ -15,7 +15,6 @@ import ShoppingCartIcon from "./ShoppingCartIcon/ShoppingCartIcon";
  */
 const Navbar = (): JSX.Element => {
   const [isShowLeftPanel, setIsShowLeftPanel] = useState<boolean>(false); // Отображение меню (навигация) слева
-  const [isShowSearchInput, setIsShowSearchIn] = useState<boolean>(false); // Отображение инпута
 
   return (
     <>
@@ -38,32 +37,10 @@ const Navbar = (): JSX.Element => {
 
         <div className={styles.right}>
           <div className={styles.searchInputWrapper}>
-            {isShowSearchInput ? (
-              <Input
-                className={styles.searchInput}
-                size="large"
-                style={{
-                  visibility: isShowSearchInput ? "visible" : "hidden",
-                }}
-                addonAfter={
-                  <CloseCircleOutlined
-                    className={styles.button}
-                    onClick={() => setIsShowSearchIn(false)}
-                  />
-                }
-                addonBefore={
-                  <SearchOutlined
-                    className={styles.button}
-                    onClick={() => setIsShowSearchIn(true)}
-                  />
-                }
-              />
-            ) : (
-              <SearchOutlined
-                className={styles.button}
-                onClick={() => setIsShowSearchIn(true)}
-              />
-            )}
+            <SearchOutlined
+              className={styles.button}
+              onClick={() => (window.location.href = "/search")}
+            />
           </div>
 
           <LineChartOutlined className={styles.button} />
