@@ -11,7 +11,7 @@ interface ILeftPanel {
 /**
  * Компонент LeftPanel представляет боковую панель меню слева.
  *
- * @param {function} handlePanel - Функция обработчик для закрытия панели.
+ * @param {() => void} handlePanel - Функция обработчик для закрытия панели.
  */
 const LeftPanel: React.FC<ILeftPanel> = ({
   handlePanel,
@@ -40,7 +40,11 @@ const LeftPanel: React.FC<ILeftPanel> = ({
       <div className={styles.top}>
         <span className={styles.subtitle}>Навигация</span>
 
-        <p className={styles.button}></p>
+        <p className={styles.button}>
+          <a href="/catalog" className={styles.link}>
+            Каталог
+          </a>
+        </p>
         <p className={styles.button}>
           <a href="/about-us" className={styles.link}>
             О компании

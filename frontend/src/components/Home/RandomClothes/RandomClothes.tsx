@@ -44,8 +44,8 @@ const RandomClothes = ({ products }: IRandomClothesProps): JSX.Element => {
 
       <div className={styles.wrapperCards}>
         <div className={styles.wrapperSmallCards}>
-          {filteredProducts.map((card: IProduct) => (
-            <SmallCard {...card} key={card.id} />
+          {filteredProducts.map((product: IProduct) => (
+            <SmallCard {...product} key={product.id} />
           ))}
         </div>
 

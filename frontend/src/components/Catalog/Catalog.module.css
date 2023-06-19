@@ -1,0 +1,19 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-top: 32px;
+    flex: 1;
+    gap: 32px;
+}
+
+.wrapperButtons {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.wrapperCards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+}

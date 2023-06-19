@@ -1,0 +1,8 @@
+.wrapperSort {
+    display: flex;
+    gap: 8px;
+}
+
+.button {
+    cursor: pointer;
+}

@@ -6,7 +6,7 @@ import styles from "./Size.module.css";
  * Он принимает следующие свойства:
  * @param {string} size - Размер товара.
  * @param {boolean} active - Флаг, указывающий, является ли размер активным.
- * @param {function} onClick - Обработчик клика по размеру.
+ * @param {() => void} onClick - Обработчик клика по размеру.
  */
 const Size = ({ size, active, onClick }: ISizeCard): JSX.Element => {
   const handleClick = (): void => {

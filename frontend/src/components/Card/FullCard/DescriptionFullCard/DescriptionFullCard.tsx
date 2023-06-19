@@ -16,9 +16,9 @@ const features = [
  * Компонент DescriptionFullCard представляет собой полное описание товара.
  * Он принимает следующие свойства:
  * @param {number} rating - Рейтинг товара.
- * @param {function} setRating - Функция для установки рейтинга товара.
+ * @param {() => void} setRating - Функция для установки рейтинга товара.
  * @param {string} activeSize - Активный размер товара.
- * @param {function} handleSizeClick - Обработчик клика по размеру товара.
+ * @param {() => void} handleSizeClick - Обработчик клика по размеру товара.
  * @param {object} product - Объект с информацией о товаре.
  *
  * Компонент отображает полное описание товара, включая название, цену, описание,
