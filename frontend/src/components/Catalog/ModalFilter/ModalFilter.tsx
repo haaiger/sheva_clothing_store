@@ -45,6 +45,14 @@ const ModalFilter = ({
     setIsCategoryOpen((prevState: boolean) => !prevState);
   };
 
+  const handleCloseModal = () => {
+    setIsGenderOpen(false);
+    setIsBrandOpen(false);
+    setIsSizeOpen(false);
+    setIsCategoryOpen(false);
+    setIsFilterModalOpen(false);
+  };
+
   return (
     <>
       <div className={styles.button} onClick={() => setIsFilterModalOpen(true)}>
@@ -55,7 +63,7 @@ const ModalFilter = ({
         <Modal
           title="Фильтры"
           open={true}
-          onCancel={() => setIsFilterModalOpen(false)}
+          onCancel={handleCloseModal}
           onOk={applyFilters}
           okText={"Применить фильтры"}
           bodyStyle={{ display: "flex", flexDirection: "column", gap: "16px" }}
