@@ -1,17 +1,8 @@
 import { Checkbox } from "antd";
 import UpOutlined from "@ant-design/icons/lib/icons/UpOutlined";
 import DownOutlined from "@ant-design/icons/lib/icons/DownOutlined";
-import { CheckboxValueType } from "antd/es/checkbox/Group";
 import styles from "./FilterSection.module.css";
-import { CheckboxChangeEvent } from "antd/es/checkbox";
-
-interface IFilterSectionProps {
-  title: string;
-  isOpen: boolean;
-  onToggle: () => void;
-  onChange: (selectedFilters: CheckboxValueType[]) => void;
-  options: { value: string; label: string }[];
-}
+import { IFilterSectionProps } from "../../types";
 
 /**
  * Компонент FilterSection представляет секцию фильтра в модальном окне фильтров.

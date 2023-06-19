@@ -17,3 +17,17 @@
     gap: 16px;
     justify-content: center;
 }
+
+.list {
+    display: flex;
+    gap: 16px;
+}
+
+.listElement {
+    color: gray
+}
+
+.link {
+    color: gray;
+    text-decoration: unset;
+}

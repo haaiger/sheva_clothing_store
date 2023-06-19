@@ -132,6 +132,22 @@ const Catalog = (): JSX.Element => {
 
   return (
     <div className={styles.wrapper}>
+      <div className={styles.wrapperList}>
+        <ul className={styles.list}>
+          <li className={`${styles.listElement} ${styles.button}`}>
+            <a href="/" className={styles.link}>
+              Главная
+            </a>
+          </li>
+          <li className={styles.listElement}>/</li>
+          <li className={`${styles.listElement} ${styles.button}`}>
+            <a href="/catalog" className={styles.link}>
+              Каталог
+            </a>
+          </li>
+        </ul>
+      </div>
+
       <div className={styles.wrapperButtons}>
         <ModalFilter
           applyFilters={applyFilters}

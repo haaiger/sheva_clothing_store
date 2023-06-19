@@ -1,21 +1,18 @@
-import React, { Dispatch, SetStateAction } from "react";
+import React from "react";
 import { Divider, Drawer } from "antd";
 import styles from "./LeftPanel.module.css";
 import CloseCircleOutlined from "@ant-design/icons/lib/icons/CloseCircleOutlined";
 import InstagramOutlined from "@ant-design/icons/lib/icons/InstagramOutlined";
-
-interface ILeftPanel {
-  handlePanel: Dispatch<SetStateAction<boolean>>;
-}
+import { ILeftPanelProps } from "./types";
 
 /**
  * Компонент LeftPanel представляет боковую панель меню слева.
  *
  * @param {() => void} handlePanel - Функция обработчик для закрытия панели.
  */
-const LeftPanel: React.FC<ILeftPanel> = ({
+const LeftPanel: React.FC<ILeftPanelProps> = ({
   handlePanel,
-}: ILeftPanel): JSX.Element => {
+}: ILeftPanelProps): JSX.Element => {
   const handleClose = (): void => {
     handlePanel(false);
   };

@@ -21,3 +21,11 @@ export interface IModalFilterProps {
     handleSizeFilterSelection: (selectedFilters: CheckboxValueType[]) => void;
     handleCategoryFilterSelection: (selectedFilters: CheckboxValueType[]) => void;
 }
+
+export interface IFilterSectionProps {
+    title: string;
+    isOpen: boolean;
+    onToggle: () => void;
+    onChange: (selectedFilters: CheckboxValueType[]) => void;
+    options: { value: string; label: string }[];
+}
