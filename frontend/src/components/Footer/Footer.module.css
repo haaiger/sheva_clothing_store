@@ -25,3 +25,8 @@
 .text {
     font-size: 14px;
 }
+
+.link {
+    text-decoration: unset;
+    color: unset;
+}

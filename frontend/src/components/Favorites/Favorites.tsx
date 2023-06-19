@@ -38,7 +38,23 @@ const Favorites = (): JSX.Element => {
 
   return (
     <div className={styles.wrapper}>
-      <h1>Избранное</h1>
+      <div className={styles.wrapperList}>
+        <ul className={styles.list}>
+          <li className={`${styles.listElement} ${styles.button}`}>
+            <a href="/" className={styles.link}>
+              Главная
+            </a>
+          </li>
+          <li className={styles.listElement}>/</li>
+          <li className={`${styles.listElement} ${styles.button}`}>
+            <a href="/favorites" className={styles.link}>
+              Избранное
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <h1 className={styles.head}>Избранное</h1>
 
       {products ? (
         <div className={styles.wrapperCards}>
@@ -55,7 +71,7 @@ const Favorites = (): JSX.Element => {
         </div>
       ) : (
         <div className={styles.wrapperText}>
-          <p>Список избранного пуст</p>
+          <p>Список избранного пуст.</p>
         </div>
       )}
     </div>

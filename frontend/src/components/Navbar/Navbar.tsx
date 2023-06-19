@@ -1,10 +1,8 @@
 import { useState } from "react";
-import { CloseCircleOutlined } from "@ant-design/icons";
 import { Outlet } from "react-router-dom";
 import UnorderedListOutlined from "@ant-design/icons/lib/icons/UnorderedListOutlined";
 import SearchOutlined from "@ant-design/icons/lib/icons/SearchOutlined";
 import LineChartOutlined from "@ant-design/icons/lib/icons/LineChartOutlined";
-import { Input } from "antd";
 import styles from "./Navbar.module.css";
 import LeftPanel from "../ LeftPanel/LeftPanel";
 import FavoriteIcon from "./FavoriteIcon/FavoriteIcon";

@@ -49,9 +49,9 @@ const RandomClothes = ({ products }: IRandomClothesProps): JSX.Element => {
           ))}
         </div>
 
-        <div className={styles.button}>
+        <a href="" className={styles.link}>
           Смотреть все <RightOutlined />
-        </div>
+        </a>
       </div>
     </div>
   );

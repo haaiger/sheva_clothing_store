@@ -32,7 +32,12 @@ const Footer = (): JSX.Element => {
           запрещено ;)
         </span>
 
-        <span className={styles.text}>Интернет-магазин создан @tm_sheva</span>
+        <span className={styles.text}>
+          Интернет-магазин создан{" "}
+          <a href="https://t.me/tm_sheva" className={styles.link}>
+            @tm_sheva
+          </a>
+        </span>
       </div>
     </footer>
   );

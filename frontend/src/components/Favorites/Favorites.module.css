@@ -5,6 +5,25 @@
     margin-top: 32px;
 }
 
+.list {
+    display: flex;
+    gap: 16px;
+}
+
+.listElement {
+    color: gray
+}
+
+.link {
+    color: gray;
+    text-decoration: unset;
+}
+
+.head {
+    font-size: 24px;
+    margin: 32px 0;
+}
+
 .wrapperCards {
     display: flex;
     justify-content: center;
