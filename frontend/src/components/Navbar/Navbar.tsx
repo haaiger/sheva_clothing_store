@@ -25,12 +25,12 @@ const Navbar = (): JSX.Element => {
             <UnorderedListOutlined />
             <span>Меню</span>
           </div>
+        </div>
 
-          <div className={styles.center}>
-            <a href="/" className={styles.title}>
-              SHEVA
-            </a>
-          </div>
+        <div className={styles.center}>
+          <a href="/" className={styles.title}>
+            SHEVA
+          </a>
         </div>
 
         <div className={styles.right}>

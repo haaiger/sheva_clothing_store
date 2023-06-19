@@ -14,7 +14,6 @@
 .left {
     display: flex;
     justify-content: space-between;
-    width: 50%;
 }
 
 .menu {
@@ -34,17 +33,4 @@
 .right {
     display: flex;
     gap: 24px;
-}
-
-.searchInputWrapper {
-    display: flex;
-    align-items: center;
-    justify-content: end;
-    position: relative;
-    width: 350px;
-}
-
-.searchInput {
-    position: absolute;
-    padding: 5px;
 }
