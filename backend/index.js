@@ -5,6 +5,7 @@ const path = require('path');
 
 // const sessions = require('./src/middlewares/sessions');
 const cors = require('./src/middlewares/cors');
+const checkToken = require('./src/middlewares/token');
 
 const authRouter = require('./src/routers/authRouter');
 const fetcProductsRouter = require('./src/routers/fetcProductsRouter');
@@ -19,11 +20,10 @@ app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors);
-// app.use(sessions);
 
 app.use('/', authRouter);
 app.use('/products', fetcProductsRouter);
-app.use('/favorites', fetchFavoritesRouter);
+app.use('/favorites', checkToken, fetchFavoritesRouter);
 app.use('*', (request, response) => {
   response.sendStatus(404);
 });
