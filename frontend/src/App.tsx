@@ -9,6 +9,8 @@ import Contacts from "./components/Contacts/Contacts";
 import Favorites from "./components/Favorites/Favorites";
 import Catalog from "./components/Catalog/Catalog";
 import Search from "./components/Search/Search";
+import Office from "./components/Office/Office";
+import Auth from "./components/Auth/Auth";
 
 function App() {
   return (
@@ -22,6 +24,9 @@ function App() {
           <Route path="/favorites" element={<Favorites />} />
           <Route path="/catalog" element={<Catalog />} />
           <Route path="/search" element={<Search />} />
+          <Route path="/login" element={<Auth isRegistration={false} />} />
+          <Route path="/registration" element={<Auth />} />
+          <Route path="/office" element={<Office />} />
         </Route>
       </Routes>
 

@@ -1,0 +1,11 @@
+.wrapper {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    margin-top: 32px;
+}
+
+.head {
+    margin-bottom: 8px;
+    font-size: 24px;
+}

@@ -4,14 +4,14 @@ import { HeartOutlined } from "@ant-design/icons";
 import styles from "./FavoriteIcon.module.css";
 
 /**
- *  Компонент иконки избранного.
+ * Компонент иконки избранного.
  */
 const FavoriteIcon = (): JSX.Element => {
-  const [favoriteCount, setFavoriteCount] = useState(0);
+  const [favoriteCount, setFavoriteCount] = useState<number>(0);
 
   useEffect(() => {
-    const favorites = JSON.parse(localStorage.getItem("favorites") || "");
-    setFavoriteCount(favorites.length);
+    const favorites = JSON.parse(localStorage.getItem("favorites") || "[]");
+    setFavoriteCount(favorites.length || 0);
   }, []);
 
   return (

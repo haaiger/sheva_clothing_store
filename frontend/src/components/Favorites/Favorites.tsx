@@ -23,11 +23,21 @@ const Favorites = (): JSX.Element => {
           return;
         }
 
-        const response = await fetch(
-          `http://localhost:4000/favorites/${favoriteIds.join("-")}`
-        );
-        const data: IProduct[] = await response.json();
-        setProducts(data);
+        const token = localStorage.getItem("token"); // Получение токена из localStorage
+
+        if (token) {
+          const response = await fetch(
+            `http://localhost:4000/favorites/${favoriteIds.join("-")}`,
+            {
+              headers: {
+                authorization: token,
+              },
+            }
+          );
+
+          const data: IProduct[] = await response.json();
+          setProducts(data);
+        }
       } catch (error) {
         console.error("Ошибка при получении избранных товаров: ", error);
       }
@@ -35,6 +45,8 @@ const Favorites = (): JSX.Element => {
 
     fetchFavorites();
   }, []);
+
+  useEffect(() => console.log(products), [products]);
 
   return (
     <div className={styles.wrapper}>

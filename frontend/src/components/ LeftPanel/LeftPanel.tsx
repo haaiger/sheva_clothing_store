@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Divider, Drawer } from "antd";
 import styles from "./LeftPanel.module.css";
 import CloseCircleOutlined from "@ant-design/icons/lib/icons/CloseCircleOutlined";
@@ -13,9 +13,19 @@ import { ILeftPanelProps } from "./types";
 const LeftPanel: React.FC<ILeftPanelProps> = ({
   handlePanel,
 }: ILeftPanelProps): JSX.Element => {
+  const [isAuth, setIsAuth] = useState<boolean>(false);
+
   const handleClose = (): void => {
     handlePanel(false);
   };
+
+  useEffect(() => {
+    const getToken = localStorage.getItem('token'); 
+    console.log(Boolean(getToken));   
+    if (getToken) {
+      setIsAuth(true);
+    }
+  }, [])
 
   return (
     <Drawer
@@ -37,24 +47,34 @@ const LeftPanel: React.FC<ILeftPanelProps> = ({
       <div className={styles.top}>
         <span className={styles.subtitle}>Навигация</span>
 
-        <p className={styles.button}>
+        <p>
           <a href="/catalog" className={styles.link}>
             Каталог
           </a>
         </p>
-        <p className={styles.button}>
+        <p>
           <a href="/about-us" className={styles.link}>
             О компании
           </a>
         </p>
-        <p className={styles.button}>
+        <p>
           <a href="/contacts" className={styles.link}>
             Контакты
           </a>
         </p>
-        <p className={styles.button}>Доставка [не активна]</p>
-        <p className={styles.button}>Оплата [не активна]</p>
-        <p className={styles.button}>Личный кабинет [не активна]</p>
+        <p>Доставка [не активна]</p>
+        <p>Оплата [не активна]</p>
+        <p>
+          {isAuth ? (
+            <a href="/office" className={styles.link}>
+              Личный кабинет
+            </a>
+          ) : (
+            <a href="/login" className={styles.link}>
+              Авторизоваться
+            </a>
+          )}
+        </p>
       </div>
 
       <Divider />
